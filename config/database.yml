@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: localhost
+  # username: momento
+  # password: vasco123
+
+development:
+  <<: *default
+  database: nutz_admin_development
+
+test:
+  <<: *default
+  database: nutz_admin_test
+
+production:
+  <<: *default
+  database: nutz_admin_production
+  username: nutz_admin
+  password: <%= ENV["NUTZ_ADMIN_DATABASE_PASSWORD"] %>
