@@ -8,14 +8,14 @@ default: &default
 
 development:
   <<: *default
-  database: nutz_admin_development
+  database: simple_store_development
 
 test:
   <<: *default
-  database: nutz_admin_test
+  database: simple_store_admin_test
 
 production:
   <<: *default
-  database: nutz_admin_production
-  username: nutz_admin
-  password: <%= ENV["NUTZ_ADMIN_DATABASE_PASSWORD"] %>
+  database: simple_store_production
+  username: simple_store_admin
+  password: <%= ENV["SIMPLE_STORE_ADMIN_DATABASE_PASSWORD"] %>
